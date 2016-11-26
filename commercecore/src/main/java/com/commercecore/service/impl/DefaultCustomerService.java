@@ -44,9 +44,9 @@ public class DefaultCustomerService implements CustomerService
 		
 	}
 
-	public List<CustomerModel> getModels() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<CustomerModel> getModels() 
+	{
+		return customerDao.getModels();
 	}
 	
 }

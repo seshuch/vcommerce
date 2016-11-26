@@ -1,12 +1,16 @@
 package com.commercestorefront.controllers.pages;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.commercecore.model.CustomerModel;
 import com.commercefacades.data.CustomerData;
 import com.commercefacades.facades.CustomerFacade;
 import com.commercestorefront.forms.CustomerForm;
@@ -41,5 +45,12 @@ public class CustomerController
 		customerData.setLastName(customerForm.getLastName());
 		getCustomerFacade().saveCustomer(customerData);
 		return "forms/addCustomer";
+	}
+	
+	@RequestMapping(value="/customers",method=RequestMethod.GET, produces= "application/json")
+	@ResponseBody
+	public List<CustomerModel> customers()
+	{
+		return customerFacade.getCustomers();
 	}
 }
