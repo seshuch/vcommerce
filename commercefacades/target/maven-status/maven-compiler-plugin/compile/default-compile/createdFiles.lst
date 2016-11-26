@@ -1,3 +1,4 @@
+com\commercefacades\converters\impl\CustomerPopulator.class
 com\commercefacades\facades\CustomerFacade.class
 com\commercefacades\converters\impl\ProductPopulator.class
 com\commercefacades\data\ProductData.class

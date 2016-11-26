@@ -49,7 +49,7 @@ public class CustomerController
 	
 	@RequestMapping(value="/customers",method=RequestMethod.GET, produces= "application/json")
 	@ResponseBody
-	public List<CustomerModel> customers()
+	public List<CustomerData> customers()
 	{
 		return customerFacade.getCustomers();
 	}

@@ -15,6 +15,9 @@
 	</bean>
 	<bean id="customerFacade" class="com.commercefacades.facades.impl.DefaultCustomerFacade">
 		<property name="customerService" ref="customerService"/>
+		<property name="customerPopulator" ref="customerPopulator"/>
 	</bean>
+	
+	<bean id="customerPopulator" class="com.commercefacades.converters.impl.CustomerPopulator"/>
 	<import resource="classpath*:/commercecore-spring.xml" />
 </beans>
