@@ -1,6 +1,5 @@
 package com.commercecore.model;
 
-import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.commercecore.model.CustomerModel;
 import com.commercecore.service.CustomerService;
-import com.commercefacades.converters.Populator;
+import com.commercefacades.converters.Converters;
 import com.commercefacades.data.CustomerData;
 import com.commercefacades.facades.CustomerFacade;
 
@@ -13,15 +13,16 @@ public class DefaultCustomerFacade implements CustomerFacade
 {
 	private CustomerService customerService;
 	
-	private Populator<CustomerModel, CustomerData> customerPopulator;
+	private Converters<CustomerModel, CustomerData> customerConverter;
 	
-	public Populator<CustomerModel, CustomerData> getCustomerPopulator() {
-		return customerPopulator;
+
+	public Converters<CustomerModel, CustomerData> getConverter() {
+		return customerConverter;
 	}
 
 
-	public void setCustomerPopulator(Populator<CustomerModel, CustomerData> customerPopulator) {
-		this.customerPopulator = customerPopulator;
+	public void setConverter(Converters<CustomerModel, CustomerData> customerConverter) {
+		this.customerConverter = customerConverter;
 	}
 
 
@@ -52,7 +53,7 @@ public class DefaultCustomerFacade implements CustomerFacade
 		for(CustomerModel customer:customers)
 		{
 			CustomerData customerData= new CustomerData();
-			customerData=customerPopulator.populate(customer, customerData);
+			customerData=customerConverter.convert(customer);
 			customerDataList.add(customerData);
 		}
 		return customerDataList;

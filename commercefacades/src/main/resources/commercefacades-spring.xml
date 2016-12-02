@@ -15,9 +15,36 @@
 	</bean>
 	<bean id="customerFacade" class="com.commercefacades.facades.impl.DefaultCustomerFacade">
 		<property name="customerService" ref="customerService"/>
-		<property name="customerPopulator" ref="customerPopulator"/>
+		<property name="converter" ref="customerConverter"/>
+	</bean>
+	
+	<bean id="baseStoreFacade" class="com.commercefacades.facades.impl.DefaultBaseStoreFacade">
+		<property name="baseStoreService" ref="baseStoreService"/>
+		<property name="baseStoreConverter" ref="baseStoreConverter"/>
+	</bean>
+	
+	<bean id="abstractConverter" class="com.commercefacades.converters.Converters"/>
+	
+	<bean id="customerConverter" parent="abstractConverter">
+		<property name="target" value="com.commercefacades.data.CustomerData"/>
+		<property name="populators">
+			<list>
+				<ref bean="customerPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="baseStoreConverter" parent="abstractConverter">
+		<property name="target" value="com.commercefacades.data.BaseStoreData"/>
+		<property name="populators">
+			<list>
+				<ref bean="baseStorePopulator"/>
+			</list>
+		</property>
 	</bean>
 	
 	<bean id="customerPopulator" class="com.commercefacades.converters.impl.CustomerPopulator"/>
+	<bean id="baseStorePopulator" class="com.commercefacades.converters.impl.BaseStorePopulator"/>
+	
 	<import resource="classpath*:/commercecore-spring.xml" />
 </beans>

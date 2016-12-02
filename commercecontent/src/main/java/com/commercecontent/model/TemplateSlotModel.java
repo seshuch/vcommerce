@@ -28,5 +28,4 @@ public class TemplateSlotModel extends SlotModel
 		this.contentPage = contentPage;
 	}
 	
-	
 }

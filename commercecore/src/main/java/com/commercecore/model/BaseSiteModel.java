@@ -22,6 +22,9 @@ public class BaseSiteModel
 	@Column
 	private String siteId;
 	
+	@Column
+	private String name;
+	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name = "storeID")
 	private BaseStoreModel baseStore;
@@ -41,6 +44,22 @@ public class BaseSiteModel
 
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getVersion() {
+		return version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
 	}
 
 	public String getSiteId() {

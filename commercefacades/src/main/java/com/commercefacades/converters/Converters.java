@@ -8,6 +8,18 @@ public class Converters<T,V> {
 	
 	private Class<V> target;
 	
+	
+	public Class<V> getTarget() {
+		return target;
+	}
+
+
+	public void setTarget(Class<V> target) {
+		this.target = target;
+	}
+
+
+
 	public List<Populator<T, V>> getPopulators() {
 		return populators;
 	}

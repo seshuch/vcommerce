@@ -27,6 +27,11 @@
 	<bean id="customerService" class="com.commercecore.service.impl.DefaultCustomerService">
 		<property name="customerDao" ref="customerDao"/>
 	</bean>
+	<bean id="baseStoreService" class="com.commercecore.service.impl.DefaultBaseStoreService">
+		<property name="baseStoreDao" ref="baseStoreDao"/>
+	</bean>
+	
+	
 	<bean id="addressDao" class="com.commercecore.dao.impl.DefaultAddressDao">
 		<property name="session" ref="sessionFactory"/>
 	</bean>

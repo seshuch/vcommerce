@@ -1,7 +1,5 @@
 package com.commercecontent.model;
 
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -40,9 +38,7 @@ public class ContentPageModel
 	public void setDefault(boolean isDefault) {
 		this.isDefault = isDefault;
 	}
-	private Set<PageSlotModel> pageSlots;
 	
-	private PageTemplateModel pageTemplate;
 	
 	public String getLabel()
 	{
@@ -59,22 +55,6 @@ public class ContentPageModel
 	public void setPageCode(String pageCode)
 	{
 		this.pageCode = pageCode;
-	}
-	public PageTemplateModel getPageTemplate()
-	{
-		return pageTemplate;
-	}
-	public void setPageTemplate(PageTemplateModel pageTemplate)
-	{
-		this.pageTemplate = pageTemplate;
-	}
-	public Set<PageSlotModel> getPageSlots()
-	{
-		return pageSlots;
-	}
-	public void setPageSlots(Set<PageSlotModel> pageSlots)
-	{
-		this.pageSlots = pageSlots;
 	}
 	public int getId() {
 		return id;
@@ -95,6 +75,7 @@ public class ContentPageModel
 		this.name = name;
 	}
 	public String getPageName() {
+		
 		return pageName;
 	}
 	public void setPageName(String pageName) {
