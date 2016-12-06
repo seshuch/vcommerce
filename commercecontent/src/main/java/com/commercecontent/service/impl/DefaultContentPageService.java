@@ -46,4 +46,9 @@ public class DefaultContentPageService implements ContentPageService
 		return null;
 	}
 
+	public ContentPageModel getContentPageForCode(String code) 
+	{
+		return contentPageDao.getPageForCode(code);
+	}
+
 }

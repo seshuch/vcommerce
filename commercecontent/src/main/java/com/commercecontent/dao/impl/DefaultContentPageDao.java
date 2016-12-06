@@ -46,7 +46,7 @@ public class DefaultContentPageDao implements ContentPageDao
 
 	public ContentPageModel getPageForCode(String code)
 	{
-		return null;
+		return (ContentPageModel) session.getCurrentSession().createQuery("From ContentPageModel where pageCode=:pageCode").setParameter("pageCode", code).list().get(0);
 	}
 
 	
