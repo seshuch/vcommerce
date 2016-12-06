@@ -1,9 +1,13 @@
 package com.commercecontent.model;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -32,6 +36,16 @@ public class ContentPageModel
 	@Column
 	private boolean isDefault;
 	
+	@OneToMany
+	@JoinColumn(name="contentSoltID")
+	private Set<ContentSlotModel> contentSlots;
+	
+	public Set<ContentSlotModel> getContentSlots() {
+		return contentSlots;
+	}
+	public void setContentSlots(Set<ContentSlotModel> contentSlots) {
+		this.contentSlots = contentSlots;
+	}
 	public boolean isDefault() {
 		return isDefault;
 	}

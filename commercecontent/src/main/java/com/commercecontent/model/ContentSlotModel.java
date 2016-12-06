@@ -1,12 +1,21 @@
 package com.commercecontent.model;
 
-import java.util.Set;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class ContentSlotModel
 {
+	@Id
+	@GeneratedValue
 	private int id;
+	
+	@Column
 	private String position;
-	private Set<AbstractComponentModel> components;
+	
 	public int getId()
 	{
 		return id;
@@ -22,14 +31,5 @@ public class ContentSlotModel
 	public void setPosition(String position)
 	{
 		this.position = position;
-	}
-	public Set<AbstractComponentModel> getComponents()
-	{
-		return components;
-	}
-	public void setComponents(Set<AbstractComponentModel> components)
-	{
-		this.components = components;
-	}
-	
+	}	
 }
