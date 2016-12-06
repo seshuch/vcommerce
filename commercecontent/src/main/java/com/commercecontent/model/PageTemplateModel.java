@@ -1,4 +1,4 @@
-package com.commercecontent.model;
+/*package com.commercecontent.model;
 
 import java.util.Set;
 
@@ -75,3 +75,4 @@ public class PageTemplateModel
 	}
 	
 }
+*/

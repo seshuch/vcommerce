@@ -6,7 +6,6 @@ import org.hibernate.SessionFactory;
 
 import com.commercecontent.dao.ContentPageDao;
 import com.commercecontent.model.ContentPageModel;
-import com.commercecontent.model.PageTemplateModel;
 
 public class DefaultContentPageDao implements ContentPageDao
 {
@@ -50,10 +49,7 @@ public class DefaultContentPageDao implements ContentPageDao
 		return null;
 	}
 
-	public PageTemplateModel getViewForTemplate(String code)
-	{
-		return null;
-	}
+	
 
 	public ContentPageModel getDefaultPage(String pageCode) 
 	{

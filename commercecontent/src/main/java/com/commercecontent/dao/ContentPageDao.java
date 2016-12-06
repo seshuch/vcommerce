@@ -3,7 +3,6 @@ package com.commercecontent.dao;
 import java.util.List;
 
 import com.commercecontent.model.ContentPageModel;
-import com.commercecontent.model.PageTemplateModel;
 
 public interface ContentPageDao
 {
@@ -13,6 +12,5 @@ public interface ContentPageDao
 	void updateModel(ContentPageModel model);
 	List<ContentPageModel> getModels();
 	ContentPageModel getPageForCode(String code);
-	PageTemplateModel getViewForTemplate(String code);
 	ContentPageModel getDefaultPage(String pageCode);
 }

@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.commercecontent.dao.ContentPageDao;
 import com.commercecontent.model.ContentPageModel;
-import com.commercecontent.model.PageTemplateModel;
 import com.commercecontent.service.CMSSiteService;
 
 public class DefaultCMSSiteService implements CMSSiteService
@@ -50,11 +49,6 @@ public class DefaultCMSSiteService implements CMSSiteService
 		return null;
 	}
 
-	public PageTemplateModel getViewForTemplate(String code)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	public ContentPageModel getDefaultPage(String pageCode)
 	{
