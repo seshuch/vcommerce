@@ -33,9 +33,11 @@ public class BaseSiteModel
 	private String version;	
 	
 	@OneToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="langId")
 	private LanguageModel defaultLanguage;
 	
 	@OneToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="currencyId")
 	private CurrencyModel defaultCurency;
 
 	public int getId() {

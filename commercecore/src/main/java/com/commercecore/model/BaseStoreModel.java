@@ -2,12 +2,12 @@ package com.commercecore.model;
 
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -26,19 +26,24 @@ public class BaseStoreModel
 	@Column
 	private String name;
 	
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(fetch = FetchType.LAZY)
+	@JoinColumn(name="languageId")
 	private Set<LanguageModel> supportedLanguages;
 	
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(fetch = FetchType.LAZY)
+	@JoinColumn(name="currencyId")
 	private Set<CurrencyModel> supportedCurrencies;
 	
 	@OneToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="defaultCurrency")
 	private CurrencyModel defaultCurency;
 	
 	@OneToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="defaultLanguage")
 	private LanguageModel defaultLanguage;
 	
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(fetch = FetchType.LAZY)
+	@JoinColumn(name="baseSiteId")
 	private Set<BaseSiteModel> baseSite;
 
 	public int getId() {

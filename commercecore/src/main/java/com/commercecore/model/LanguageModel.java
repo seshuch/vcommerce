@@ -23,11 +23,29 @@ public class LanguageModel
 	
 	@Column
 	private String isoCode;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getIsoCode() {
+		return isoCode;
+	}
+
+	public void setIsoCode(String isoCode) {
+		this.isoCode = isoCode;
+	}
 	
-	@OneToOne(fetch= FetchType.LAZY)
-	@PrimaryKeyJoinColumn
-	private BaseSiteModel baseSite;
-	
-	@ManyToOne(fetch= FetchType.LAZY)
-	private BaseStoreModel baseStore;
 }

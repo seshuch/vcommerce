@@ -21,14 +21,4 @@ public class CurrencyModel
 	@Column
 	private String isoCode;
 	
-	@OneToOne(fetch=FetchType.LAZY)
-	@PrimaryKeyJoinColumn
-	private BaseSiteModel baseSite;
-	
-	@OneToOne(fetch=FetchType.LAZY)
-	@PrimaryKeyJoinColumn
-	private PriceRowModel priceRow;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	private BaseStoreModel baseStore;
 }
